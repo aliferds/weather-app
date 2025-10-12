@@ -1,0 +1,133 @@
+details {
+  position: relative;
+  height: fit-content;  
+  width: fit-content;
+
+  display: inline-block;
+  z-index: 10;
+  background-color: var(--neutral-700);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+  background-position: 50% 25%;
+}
+
+details[open] .dropdown-card {
+  position: absolute;
+  top: calc(100% + .25rem); 
+  left: auto;
+  right: 0;
+  
+  background-color: var(--neutral-700);
+  border-radius: 8px;
+  padding: 2px 4px;
+  width: 220px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  z-index: 20; 
+}
+
+summary {
+    position: relative; /* Opcional: Garante que o summary fique sobre o card se eles se sobrepuserem */
+    list-style-type: none; /* Hides the default marker */
+    padding: .5rem;
+    font-size: 16px;
+    z-index: 21; /* Um z-index maior que o card */
+}
+
+summary::-webkit-details-marker { /* For WebKit browsers */
+  display: none;
+}
+
+summary::before,
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: text-top;
+}
+
+summary::before {
+  background-image: url("../images/icon-units.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  margin-right: .5rem;
+}
+
+summary::after {
+  background-image: url("../images/icon-dropdown.svg");
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  margin-left: .5rem;
+}
+
+#toggle-system {
+  border: 1px solid var(--neutral);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: calc(220px - 8px);
+  padding: .5rem;
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+fieldset {
+  border: 0;
+  border-bottom: 1px solid var(--neutral-300);
+  padding-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+fieldset:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  transform: translateY(50%);
+  right: 4px;
+  display: block;
+  background: transparent url("../images/icon-checkmark.svg") no-repeat center;
+}
+
+label:has(input[type="radio"]:checked) {
+  background-color: var(--neutral-600);
+  border-radius: 8px;
+}
+
+details label {
+  position: relative;
+  cursor: pointer;
+}
+
+details legend {
+  font-size: 12px;
+  color: var(--neutral-300);
+  cursor: default;
+}
+
+label, legend {
+  padding: .5rem;
+}

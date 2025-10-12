@@ -7,55 +7,115 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.svg">
   
   <title>Weather app</title>
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/styles/index.css" />
+  <link rel="stylesheet" href="./assets/styles/unitsMenu.css" />
 </head>
 <body>
+<header>
+  <!-- logo -->
+  <img src="./assets/images/logo.svg" alt="weather now logo">
+  <!-- unidades -->
+  <details name="units" id="units">
+    <summary>Units</summary>
+    <form class="dropdown-card">
+      <label for="units-toggle" id="toggle-system">
+        <input type="checkbox" name="units-toggle" id="units-toggle">
+        Switch to <span id="unit-system">Imperial<span></span>
+      </label>
 
-  Units
+      <fieldset>
+        <legend>Temperature</legend>
+        <label for="celsius">
+          Celsius (°C)
+          <input type="radio" name="temperature" id="celsius" checked>
+        </label>
+        <label for="fahrenheit">
+          Fahrenheit (°F)
+          <input type="radio" name="temperature" id="fahrenheit">
+        </label>
+      </fieldset>
 
-  Switch to Imperial/Metric
+      <fieldset>
+        <legend>
+          Wind Speed
+        </legend>
+        <label for="kmh">
+          km/h
+          <input type="radio" name="wind-speed" id="kmh" checked>
+        </label>
+        <label for="mph">
+          mph
+          <input type="radio" name="wind-speed" id="mph">
+        </label>
+      </fieldset>
 
-  Temperature
+      <fieldset>
+        <legend>
+          Precipitation
+        </legend>
+        <label for="mm">
+          Millimeters (mm)
+          <input type="radio" name="precipitation" id="mm" checked>
+        </label>
+        <label for="in">
+          Inches (in)
+          <input type="radio" name="precipitation" id="in">
+        </label>
+      </fieldset>
+    </form>
+  </details>
+</header>
+<main>
 
-  Celsius (°C)
-  Fahrenheit (°F)
+  <h1>
+    How's the sky looking today?
+  </h1>
+  <form>
+    <input type="search" name="search" id="search" placeholder="Search for a city, e.g., New York">
+    <button id="search-button">
+      Search
+    </button>
+  </form>
+  <div class="weather-cards-group">
 
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
+    <div class="card weather-values">
+      Feels like
+      <!-- Insert temperature here -->
+    </div>
+    
+    <div class="card weather-values">
+      Humidity
+      <!-- Insert humidity here -->
+    </div>
+    
+    <div class="card weather-values">
+      Wind
+      <!-- Insert wind here -->   
+    </div>
+    
+    <div class="card weather-values">
+      Precipitation
+      <!-- Insert precipitation here -->
+    </div>
+  </div>
   
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
+  <div class="daily-cards-group">
+    Daily forecast
+    <!-- Insert daily forecast for the next 7 days here -->
+  </div>
+</main>
+<aside>
+  <div class="hourly-cards-group">
+    Hourly forecast
+    <!-- Insert hourly forecast for the selected day here -->
+  </div>
+</aside>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="https://www.aliferdev.digital">Alifer Duarte Silva</a>.
   </footer>
+
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
