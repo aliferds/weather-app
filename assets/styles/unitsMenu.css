@@ -1,18 +1,17 @@
 details {
   position: relative;
-  height: fit-content;  
-  width: fit-content;
+  height: 42px;
+  width: 120px;
 
   display: inline-block;
   z-index: 10;
-  background-color: var(--neutral-700);
+  background-color: var(--neutral-800);
   border-radius: 8px;
   cursor: pointer;
 }
 
 details[open] > summary::after {
-  transform: rotate(180deg);
-  background-position: 50% 25%;
+  transform: scale(-1) translateY(50%);
 }
 
 details[open] .dropdown-card {
@@ -21,7 +20,7 @@ details[open] .dropdown-card {
   left: auto;
   right: 0;
   
-  background-color: var(--neutral-700);
+  background-color: var(--neutral-800);
   border-radius: 8px;
   padding: 2px 4px;
   width: 220px;
@@ -34,9 +33,14 @@ details[open] .dropdown-card {
 summary {
     position: relative; /* Opcional: Garante que o summary fique sobre o card se eles se sobrepuserem */
     list-style-type: none; /* Hides the default marker */
-    padding: .5rem;
-    font-size: 16px;
-    z-index: 21; /* Um z-index maior que o card */
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 21;
+    text-align: center;
 }
 
 summary::-webkit-details-marker { /* For WebKit browsers */
@@ -47,23 +51,25 @@ summary::before,
 summary::after {
   content: "";
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 summary::before {
+  left: 0.75rem;
   background-image: url("../images/icon-units.svg");
-  background-position: top;
+  background-position: 50%;
   background-repeat: no-repeat;
-  margin-right: .5rem;
 }
 
 summary::after {
+  right: 0.75rem;
   background-image: url("../images/icon-dropdown.svg");
-  background-position: 50% 75%;
+  background-position: 50%;
   background-repeat: no-repeat;
-  margin-left: .5rem;
 }
 
 #toggle-system {

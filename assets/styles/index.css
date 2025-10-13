@@ -11,18 +11,19 @@
 */
 
 :root {
-  --neutral: hsl(0, 0%, 100%);
-  --neutral-200: hsl(250, 6%, 84%);
-  --neutral-300: hsl(240, 6%, 70%);
-  --neutral-600: hsl(243, 23%, 30%);
-  --neutral-700: hsl(243, 23%, 24%);
-  --neutral-800: hsl(243, 27%, 20%);
-  --neutral-900: hsl(243, 96%, 9%);
+  --neutral: #ffffffff;
+  --neutral-200: #d5d4d9ff;
+  --neutral-300: #aeaeb7ff;
+  --neutral-600: #3d3b5eff;
+  --neutral-700: #312f4bff;
+  --neutral-800: #272541ff;
+  --neutral-900: #03012dff;
   
-  --orange-500: hsl(28, 100%, 52%);
+  --orange-500: #ff7c0a;
 
-  --blue-700: hsl(248, 70%, 36%);
-  --blue-500: hsl(233, 67%, 56%);
+  --blue-700: #2d1c9cff;
+  --blue-600: #3e52a3;
+  --blue-500: #4455daff;
   
   --font-size: 18px;
   --font-bricolage: Bricolage Grotesque; /* 700 */
@@ -31,6 +32,8 @@
 
 body {
   width: 100%;
+  font-size: 18;
+  font-family: var(--font-dmSans), sans-serif;
   min-height: 100vh;
   background-color: var(--neutral-900);
   color: var(--neutral);
@@ -41,17 +44,21 @@ body {
   text-align: center; 
 }
 .attribution a { 
-  color: hsl(228, 45%, 44%); 
+  color: var(--blue-600); 
+}
+
+.attribution a:hover {
+  color: var(--orange-500);
 }
 
 .card {
-  background-color: var(--neutral-700);
+  background-color: var(--neutral-800);
   display: inline-block;
-  width: 100px;
-}
-
-button {
-  background-color: var(--blue-500);
+  width: 180px;
+  height: 120px;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--neutral-700);
 }
 
 header {
@@ -64,4 +71,63 @@ header {
 
 h1 {
   text-align: center;
+}
+
+#search {
+  width: 29.2rem;
+  height: 3rem;
+  font-size: 20px;
+  display: inline-block;
+  border-radius: 12px;
+  border: 0;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  background-color: var(--neutral-800);
+  color: var(--neutral);
+}
+
+#search::placeholder {
+  font-size: 20px;
+  color: var(--neutral-200);
+}
+
+#searcher {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* #searcher::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc( 50% - 17rem);
+  transform: translateY(-50%);
+  background: url("../images/icon-search.svg") no-repeat center;
+} */
+
+#search-button {
+  height: 3rem;
+  border-radius: 12px;
+  background-color: var(--blue-500);
+  font-size: 20px;
+  color: var(--neutral);
+  padding: 0 15px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#search-button:hover   {
+  background-color: var(--blue-700);
+}
+
+h1 {
+  font-family: var(--font-bricolage);
+  font-weight: 700;
 }
