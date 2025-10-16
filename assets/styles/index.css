@@ -84,7 +84,6 @@ body {
 }
 
 main {
-  grid: main;
   max-width: 100vw;
 }
 
@@ -140,7 +139,6 @@ header {
   position: relative;
   vertical-align: center;
   padding: 1rem;
-  grid: header;
 }
 
 h1 {
@@ -211,7 +209,6 @@ aside {
 
 footer {
   display: block;
-  grid: footer;
 }
 
 #daily-cards {
