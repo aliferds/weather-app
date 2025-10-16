@@ -240,3 +240,52 @@ footer {
   background-color: var(--neutral-800);
   border-radius: 12px;
 }
+
+.weather-ref {
+  width: 100px;
+  height: 100px;
+}
+
+.overcast {
+  background: url("../images/icon-overcast.webp") center no-repeat;
+  background-size: contain;
+}
+.partly-cloudy {
+  background: url("../images/icon-partly-cloudy.webp") center no-repeat;
+  background-size: contain;
+}
+.rain {
+  background: url("../images/icon-rain.webp") center no-repeat;
+  background-size: contain;
+}
+.drizzle {
+  background: url("../images/icon-drizzle.webp") center no-repeat;
+  background-size: contain;
+}
+
+.snow {
+  background: url("../images/icon-snow.webp") center no-repeat;
+  background-size: contain;
+}
+.storm {
+  background: url("../images/icon-storm.webp") center no-repeat;
+  background-size: contain;
+}
+.sunny {
+  background: url("../images/icon-sunny.webp") center no-repeat;
+  background-size: contain;
+}
+.fog {
+  background: url("../images/icon-fog.webp") center no-repeat;
+  background-size: contain;
+}
+
+.week-day-ref, .temp-ref {
+  padding: .5rem;
+}
+
+.temp-ref {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
