@@ -63,6 +63,19 @@
           <input type="radio" name="precipitation" id="in">
         </label>
       </fieldset>
+      <fieldset class="flex">
+        <legend>
+          Hour format
+        </legend>
+        <label class="rounded-1" for="am-pm">
+          12 hours ( am / pm )
+          <input type="radio" name="hour-format" id="am-pm" checked>
+        </label>
+        <label class="rounded-1" for="h24">
+          24 hours
+          <input type="radio" name="hour-format" id="h24">
+        </label>
+      </fieldset>
     </form>
   </details>
 </header>
@@ -77,7 +90,7 @@
     </button>
   </form>
   <aside class="left-content w-full">
-    <div class="card-today flex rounded-3">
+    <div class="card-today flex rounded-3 margin-1">
       <div class="flex">
         <div>
           <p id="location">Berlin, Germany</p>
@@ -89,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="weather-cards-group flex justify-between flex-wrap w-full">
+    <div class="weather-cards-group flex flex-wrap w-full">
       <div class="card flex justify-between weather-values rounded-2">
         Feels like
         <p id="feels-like-value">18°</p>
@@ -112,7 +125,7 @@
     </div>
     
     <div class="daily-cards-group">
-      Daily forecast
+      <p class="margin-1">Daily forecast</p>
       <div id="daily-cards" class="flex align-center flex-wrap">
         <div class="daily-card rounded-2">
           <div class="week-day-ref">Tue</div>
@@ -175,13 +188,16 @@
   </aside>
   <aside>
     <div class="hourly-cards-group">
-      Hourly forecast
+      <p class="margin-1">
+
+        Hourly forecast
+      </p>
       <!-- Insert hourly forecast for the selected day here -->
     </div>
   </aside>
 </main>
 
-  <footer class="attribution">
+  <footer class="attribution margin-1">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="https://www.aliferdev.digital">Alifer Duarte Silva</a>.
   </footer>
