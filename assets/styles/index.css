@@ -28,6 +28,10 @@
   --font-size: 18px;
   --font-bricolage: Bricolage Grotesque; /* 700 */
   --font-dmSans: DM Sans; /* 300, 500, 600, 600i, 700 */
+
+  --rounded-1: 8px;
+  --rounded-2: 12px;
+  --rounded-3: 20px;
 }
 
 body {
@@ -62,7 +66,6 @@ body {
 .card-today {
   height: 16em;
   background-color: var(--neutral-800);
-  border-radius: 20px;
   margin: 1.5em 0;
   align-items: center;
 }
@@ -126,7 +129,6 @@ main {
   color: var(--neutral-200);
 
   border: 1px solid var(--neutral-700);
-  border-radius: 12px;
 }
 
 .card p {
@@ -152,7 +154,6 @@ h1 {
   height: 3em;
   font-size: 20px;
   display: inline-block;
-  border-radius: 12px;
   border: 0;
   padding-left: 3em;
   padding-right: 1em;
@@ -186,7 +187,6 @@ h1 {
   height: 3rem;
   flex: 1 1 6.3em;
   max-width: 29.2em;
-  border-radius: 12px;
   background-color: var(--blue-500);
   font-size: 20px;
   color: var(--neutral);
@@ -225,13 +225,16 @@ footer {
   height: 10em;
   border: 1px solid var(--neutral-700);
   background-color: var(--neutral-800);
-  border-radius: 12px;
 }
 
 .weather-ref {
   width: 100px;
   height: 100px;
 }
+
+/* ======================================================== */
+/* |                    WEATHER ICONS                     | */
+/* ======================================================== */
 
 .overcast {
   background: url("../images/icon-overcast.webp") center no-repeat;
@@ -271,6 +274,10 @@ footer {
   padding: .5rem;
 }
 
+/* ======================================================== */
+/* |                        UTILS                         | */
+/* ======================================================== */
+
 
 .flex {
   display: flex;
@@ -278,6 +285,10 @@ footer {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .align-center {
@@ -290,4 +301,149 @@ footer {
 
 .w-full {
   width: 100%;
+}
+
+.rounded-1 {
+  border-radius: var(--rounded-1);
+}
+.rounded-2 {
+  border-radius: var(--rounded-2);
+}
+.rounded-3 {
+  border-radius: var(--rounded-3);
+}
+
+/* ======================================================== */
+/* |                        UNITS                         | */
+/* ======================================================== */
+
+details {
+  position: relative;
+  height: 100%;
+  max-height: 42px;
+  width: 120px;
+  padding: .5rem 0;
+
+  display: inline-block;
+  z-index: 10;
+  background-color: var(--neutral-800);
+  cursor: pointer;
+}
+
+details[open] > summary::after {
+  transform: scale(-1) translateY(50%);
+}
+
+details[open] .dropdown-card {
+  position: absolute;
+  top: calc(100% + .25rem); 
+  left: auto;
+  right: 0;
+  
+  background-color: var(--neutral-800);
+  border-radius: 8px;
+  padding: 2px 4px;
+  width: 220px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  z-index: 20; 
+}
+
+summary {
+    position: relative; /* Opcional: Garante que o summary fique sobre o card se eles se sobrepuserem */
+    list-style-type: none; /* Hides the default marker */
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    z-index: 21;
+    text-align: center;
+}
+
+summary::-webkit-details-marker { /* For WebKit browsers */
+  display: none;
+}
+
+summary::before,
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+summary::before {
+  left: 0.75rem;
+  background: url("../images/icon-units.svg") no-repeat;
+  background-position: 50%;
+}
+
+summary::after {
+  right: 0.75rem;
+  background: url("../images/icon-dropdown.svg") no-repeat;
+  background-position: 50%;
+}
+
+#toggle-system {
+  border: 1px solid var(--neutral);
+  width: calc(220px - 8px);
+  padding: .5rem;
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+fieldset {
+  border: 0;
+  border-bottom: 1px solid var(--neutral-300);
+  padding-bottom: 4px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+fieldset:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  transform: translateY(50%);
+  right: 4px;
+  display: block;
+  background: transparent url("../images/icon-checkmark.svg") no-repeat center;
+}
+
+label:has(input[type="radio"]:checked) {
+  background-color: var(--neutral-600);
+}
+
+details label {
+  position: relative;
+  cursor: pointer;
+}
+
+details legend {
+  font-size: 12px;
+  color: var(--neutral-300);
+  cursor: default;
+}
+
+label, legend {
+  padding: .5rem;
 }

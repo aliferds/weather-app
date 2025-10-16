@@ -8,7 +8,6 @@
   
   <title>Weather app</title>
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/unitsMenu.css" />
 </head>
 <body>
 <header class="flex justify-between">
@@ -17,49 +16,49 @@
     <img src="./assets/images/logo.svg" alt="weather now logo">
   </div>  
   <!-- unidades -->
-  <details name="units" id="units">
-    <summary>Units</summary>
+  <details name="units" id="units" class="rounded-1">
+    <summary class="flex justify-center align-center">Units</summary>
     <form class="dropdown-card">
-      <label for="units-toggle" id="toggle-system">
+      <label for="units-toggle" id="toggle-system" class="rounded-1">
         <input type="checkbox" name="units-toggle" id="units-toggle">
         Switch to <span id="unit-system">Imperial<span></span>
       </label>
 
-      <fieldset>
+      <fieldset class="flex">
         <legend>Temperature</legend>
-        <label for="celsius">
+        <label class="rounded-1" for="celsius">
           Celsius (°C)
           <input type="radio" name="temperature" id="celsius" checked>
         </label>
-        <label for="fahrenheit">
+        <label class="rounded-1" for="fahrenheit">
           Fahrenheit (°F)
           <input type="radio" name="temperature" id="fahrenheit">
         </label>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="flex">
         <legend>
           Wind Speed
         </legend>
-        <label for="kmh">
+        <label class="rounded-1" for="kmh">
           km/h
           <input type="radio" name="wind-speed" id="kmh" checked>
         </label>
-        <label for="mph">
+        <label class="rounded-1" for="mph">
           mph
           <input type="radio" name="wind-speed" id="mph">
         </label>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="flex">
         <legend>
           Precipitation
         </legend>
-        <label for="mm">
+        <label class="rounded-1" for="mm">
           Millimeters (mm)
           <input type="radio" name="precipitation" id="mm" checked>
         </label>
-        <label for="in">
+        <label class="rounded-1" for="in">
           Inches (in)
           <input type="radio" name="precipitation" id="in">
         </label>
@@ -72,13 +71,13 @@
     How's the sky looking today?
   </h1>
   <form id="searcher" class="flex w-full">
-    <input type="search" name="search" id="search" placeholder="Search for a place...">
-    <button type="submit" id="search-button">
+    <input type="search" name="search" id="search" placeholder="Search for a place..." class="rounded-2">
+    <button type="submit" id="search-button" class="rounded-2">
       Search
     </button>
   </form>
   <aside class="left-content w-full">
-    <div class="card-today flex">
+    <div class="card-today flex rounded-3">
       <div class="flex">
         <div>
           <p id="location">Berlin, Germany</p>
@@ -91,22 +90,22 @@
       </div>
     </div>
     <div class="weather-cards-group flex justify-between flex-wrap w-full">
-      <div class="card flex justify-between weather-values">
+      <div class="card flex justify-between weather-values rounded-2">
         Feels like
         <p id="feels-like-value">18°</p>
       </div>
       
-      <div class="card flex justify-between weather-values">
+      <div class="card flex justify-between weather-values rounded-2">
         Humidity
         <p id="humidity-value">46%</p>
       </div>
       
-      <div class="card flex justify-between weather-values">
+      <div class="card flex justify-between weather-values rounded-2">
         Wind
         <p id="wind-value">14 km/h</p>
       </div>
       
-      <div class="card flex justify-between weather-values">
+      <div class="card flex justify-between weather-values rounded-2">
         Precipitation
         <p id="precipitation-value">0 mm</p>
       </div>
@@ -115,7 +114,7 @@
     <div class="daily-cards-group">
       Daily forecast
       <div id="daily-cards" class="flex align-center flex-wrap">
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Tue</div>
           <div class="weather-ref rain"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -123,7 +122,7 @@
             <span class="min-temp">14°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Wed</div>
           <div class="weather-ref drizzle"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -131,7 +130,7 @@
             <span class="min-temp">16°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Thu</div>
           <div class="weather-ref sunny"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -139,7 +138,7 @@
             <span class="min-temp">14°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Fri</div>
           <div class="weather-ref partly-cloudy"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -147,7 +146,7 @@
             <span class="min-temp">13°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Sat</div>
           <div class="weather-ref storm"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -155,7 +154,7 @@
             <span class="min-temp">15°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Sun</div>
           <div class="weather-ref snow"></div>
           <div class="temp-ref flex justify-between align-center">
@@ -163,7 +162,7 @@
             <span class="min-temp">16°</span>
           </div>
         </div>
-        <div class="daily-card">
+        <div class="daily-card rounded-2">
           <div class="week-day-ref">Mon</div>
           <div class="weather-ref fog"></div>
           <div class="temp-ref flex justify-between align-center">
