@@ -34,6 +34,56 @@
   --rounded-3: 20px;
 }
 
+/* DM Sans 300 (Light)*/
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url("../fonts/DM_Sans/static/DMSans-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* DM Sans 500 (Medium)*/
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url("../fonts/DM_Sans/static/DMSans-Medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* DM Sans 600 (SemiBold)*/
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url("../fonts/DM_Sans/static/DMSans-SemiBold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* DM Sans 600i (SemiBold italico)*/
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url("../fonts/DM_Sans/static/DMSans-SemiBoldItalic.ttf") format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+/* DM Sans 700 (Bold)*/
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url("../fonts/DM_Sans/static/DMSans-Bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bricolage Grotesque 700 (Bold) */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: local("Bricolage Grotesque"), url("../fonts/Bricolage_Grotesque/static/BricolageGrotesque-Bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   max-width: 100vw;
   font-size: 18px;
@@ -46,7 +96,7 @@ body {
 }
 
 .attribution { 
-  font-size: 11px; 
+  font-size: 12px; 
   text-align: center; 
 }
 .attribution a { 
@@ -71,11 +121,22 @@ body {
 
 .card-today div {
   align-items: center;
+  padding: 0 1.5rem;
+}
+
+@media(min-width: 625px){
+  #weather-icon-today,
+  #temperature-now {
+    justify-self: end;
+  }
+  .card-today p {
+    text-align: left;
+  }
 }
 
 #weather-icon-today {
-  width: 6em;
-  height: 6em;
+  width: 4em;
+  height: 4em;
 }
 
 #temperature-now {
@@ -105,10 +166,9 @@ main {
   padding: 1.5em 0;
   min-height: 100px;
   justify-content: space-between;
-  gap: 24px;
 }
 
-@media(max-width: 517px) {
+@media(max-width: 641px) {
   .weather-cards-group {
     justify-content: center;
   }
@@ -116,7 +176,7 @@ main {
 
 
 .card {
-  max-width: min(184px, 30vh);
+  max-width: 184px;
   height: 7.5rem;
   padding: 1rem 0 .75rem 1rem;
 
@@ -168,7 +228,6 @@ h1 {
   justify-content: center;
   align-items: center;
   justify-self: center;
-  gap: 16px;
   padding: 2em 1em;
   max-width: 655px;
 }
@@ -201,19 +260,22 @@ h1 {
   max-width: 45em;
 }
 
-
-aside {
-  display: inline-block;
-}
-
 footer {
   display: block;
+  padding: 1rem;
+}
+
+.daily-cards-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #daily-cards {
-  justify-content: flex-start;
-  gap: 16px;
+  justify-content: stretch;
   height: fit-content;
+  width: fit-content;
 }
 
 .daily-card {
@@ -287,16 +349,40 @@ footer {
   justify-content: center;
 }
 
+.justify-stretch {
+  justify-content: stretch;
+}
+
 .align-center {
   align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
 }
 
 .flex-wrap {
   flex-wrap: wrap;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .w-full {
   width: 100%;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 1.5rem;
+}
+
+.gap-3 {
+  gap: 2rem;
 }
 
 .rounded-1 {
@@ -311,6 +397,19 @@ footer {
 
 .margin-1 {
   margin: 1.5em 0;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.font-bricolage {
+  font-family: var(--font-bricolage);
+}
+
+.font-dm {
+  font-family: var(--font-dmSans);
 }
 
 /* ======================================================== */
@@ -446,4 +545,15 @@ details legend {
 
 label, legend {
   padding: .5rem;
+}
+
+
+/* ======================================================== */
+/* |                    Hourly Card                       | */
+/* ======================================================== */
+
+.hourly-cards-group {
+  width: clamp(321px, 56.1vw, 383px);
+  min-height: max(calc(100% - 1.5em), 38.5em);
+  background-color: var(--neutral-800);
 }
