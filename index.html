@@ -12,12 +12,12 @@
 <body>
 <header class="flex justify-between">
   <!-- logo -->
-  <div id="logo">
+  <a id="logo" href="/">
     <img src="./assets/images/logo.svg" alt="weather now logo">
-  </div>  
+  </a>  
   <!-- unidades -->
   <details name="units" id="units" class="rounded-1">
-    <summary class="flex justify-center align-center">Units</summary>
+    <summary class="flex justify-center align-center dropdown config">Units</summary>
     <form class="dropdown-card">
       <label for="units-toggle" id="toggle-system" class="rounded-1">
         <input type="checkbox" name="units-toggle" id="units-toggle">
@@ -188,13 +188,48 @@
       </div>
     </div>
   </div>
-  <div>
-    <div class="hourly-cards-group rounded-3">
-      <p class="margin-1">
+  <div class="right-content">
+    <div class="hourly-cards-group rounded-3 flex flex-col justify-evenly">
+      <p class="flex justify-around align-center">
         
         Hourly forecast
+        <select name="week-day-selection" id="week-day-sel" class="pointer rounded-1">
+          <option value="today" checked>Tuesday</option>
+          <option value="today+1" >Wednesday</option>
+          <option value="today+2" >Thursday</option>
+          <option value="today+3" >Friday</option>
+          <option value="today+4" >Saturday</option>
+          <option value="today+5" >Sunday</option>
+          <option value="today+6" >Monday</option>
+        </select>
       </p>
-      <!-- Insert hourly forecast for the selected day here -->
+      <div class="forecast-hour flex flex-col">
+
+        <div class="hourly flex align-center justify-between" ><span class="hour">12 am</span> <span class="temperature">13°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 1 am</span> <span class="temperature">13°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 2 am</span> <span class="temperature">14°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 3 am</span> <span class="temperature">14°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 4 am</span> <span class="temperature">15°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 5 am</span> <span class="temperature">15°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 6 am</span> <span class="temperature">16°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 7 am</span> <span class="temperature">16°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 8 am</span> <span class="temperature">17°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 9 am</span> <span class="temperature">17°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour">10 am</span> <span class="temperature">18°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour">11 am</span> <span class="temperature">18°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour">12 pm</span> <span class="temperature">19°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 1 pm</span> <span class="temperature">19°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 2 pm</span> <span class="temperature">20°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 3 pm</span> <span class="temperature">20°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 4 pm</span> <span class="temperature">21°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 5 pm</span> <span class="temperature">21°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 6 pm</span> <span class="temperature">20°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 7 pm</span> <span class="temperature">20°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 8 pm</span> <span class="temperature">18°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour"> 9 pm</span> <span class="temperature">16°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour">10 pm</span> <span class="temperature">16°</span></div>
+        <div class="hourly flex align-center justify-between"><span class="hour">11 pm</span> <span class="temperature">15°</span></div>
+      </div>
     </div>
   </div>
   </div>

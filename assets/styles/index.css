@@ -341,8 +341,24 @@ footer {
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-center {
@@ -359,6 +375,10 @@ footer {
 
 .align-stretch {
   align-items: stretch;
+}
+
+.align- {
+  align-items: 
 }
 
 .flex-wrap {
@@ -410,6 +430,10 @@ footer {
 
 .font-dm {
   font-family: var(--font-dmSans);
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 /* ======================================================== */
@@ -474,13 +498,13 @@ summary::after {
   transform: translateY(-50%);
 }
 
-summary::before {
+summary.config::before {
   left: 0.75rem;
   background: url("../images/icon-units.svg") no-repeat;
   background-position: 50%;
 }
 
-summary::after {
+summary.dropdown::after {
   right: 0.75rem;
   background: url("../images/icon-dropdown.svg") no-repeat;
   background-position: 50%;
@@ -552,8 +576,66 @@ label, legend {
 /* |                    Hourly Card                       | */
 /* ======================================================== */
 
+.right-content {
+  margin-top: 1.5rem;
+}
+
 .hourly-cards-group {
   width: clamp(321px, 56.1vw, 383px);
   min-height: max(calc(100% - 1.5em), 38.5em);
+  height: 100%;
   background-color: var(--neutral-800);
+}
+
+.forecast-hour {
+  width: 100%;
+  height: 592px;
+  padding-left: 1rem;
+  overflow-y: auto;
+  gap: .5rem;
+}
+
+.forecast-hour::-webkit-scrollbar {
+  width: 10px; /* Largura da barra vertical */
+  height: 10px; /* Altura da barra horizontal */
+}
+
+/* 2. Estiliza a trilha (fundo) da barra de rolagem */
+.forecast-hour::-webkit-scrollbar-track {
+  background: transparent; /* Cinza claro */
+  border-radius: 10px;
+}
+
+/* 3. Estiliza a alça (thumb) que desliza */
+.forecast-hour::-webkit-scrollbar-thumb {
+  background: var(--neutral-600); /* Azul vibrante */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 4. Estilo ao passar o mouse sobre a alça (opcional) */
+.forecast-hour::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-700); /* Azul mais escuro no hover */
+}
+
+select {
+  background-color: var(--neutral-700);
+  color: var(--neutral);
+  font-size: 18px;
+  padding: .5rem;
+  border: 0;
+}
+
+select option:checked {
+  background-color: var(--neutral-800);
+}
+
+.hourly {
+  padding: .5rem;
+  background-color: var(--neutral-700);
+}
+
+.hour {
+  width: 56px;
+  text-align: end;
 }
