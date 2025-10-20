@@ -79,7 +79,7 @@
     </form>
   </details>
 </header>
-<main class="loaded">
+<main class="loaded error">
   <h1>
     How's the sky looking today?
   </h1>
@@ -235,10 +235,19 @@
   </div>
 </main>
 
-  <footer class="attribution margin-1">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="https://www.aliferdev.digital">Alifer Duarte Silva</a>.
-  </footer>
+<div id="error-card" class="flex flex-col justify-center align-center">
+  <div class="icon">
+    <img src="./assets/images/icon-error.svg" alt="Error icon">
+  </div>
+  <h1>Something went wrong</h1>
+  <p class="text-center">We coudn't connect to the server (API error). Please try again in a few moments.</p>
+  <button class="flex align-center justify-evenly rounded-1 pointer"><img src="./assets/images/icon-retry.svg" alt="↻"><span>Retry</span></button>
+</div>
+
+<footer class="attribution margin-1">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+  Coded by <a href="https://www.aliferdev.digital">Alifer Duarte Silva</a>.
+</footer>
 
   <script src="./scripts/index.js"></script>
 </body>

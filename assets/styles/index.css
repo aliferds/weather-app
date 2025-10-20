@@ -639,3 +639,28 @@ select option:checked {
   width: 56px;
   text-align: end;
 }
+
+main.error {
+  display: none;
+}
+
+div#error-card {
+  gap: 1em;
+}
+
+div#error-card .icon img{
+  width: 32px;
+  height: auto;
+}
+
+div#error-card p {
+  width: 500px;
+}
+
+div#error-card button {
+  padding: .5rem;
+  border: none;
+  background: var(--neutral-700);
+  color: var(--neutral);
+  gap: .5rem;
+}
